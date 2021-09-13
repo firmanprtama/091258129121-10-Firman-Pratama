@@ -8,8 +8,10 @@
 
 > use marketdb;
 switched to db marketdb
+
 > db.createCollection("products");
 { "ok" : 1 }
+
 > show dbs;
 admin     0.000GB
 config    0.000GB
@@ -19,6 +21,14 @@ marketdb  0.000GB
 
 
 //[PRAKTIK - 02] | Manakah dari perintah berikut yang akan berhasil memasukkan 3 dokumen baru ke dalam koleksi products yang kosong? *
+//OPSI 1
+db.products.insertMany({
+    {_id:1, name: "Indomie Goreng"},
+    {_id:2, name: "Indomie Kuah"},
+    {_id:3, name: "Indomie Sarimie"},
+})
+
+//OPSI 3
 db.products.insertMany([
     {_id:1, name: "Indomie Goreng"},
     {_id:2, name: "Indomie Kuah"},
@@ -222,4 +232,4 @@ db.products.updateOne({
 })
 
 //[PRAKTIK - 15] | Masukkan perintah untuk mengecek berapa jumlah collection pada database marketdb yang sudah kamu buat selama menyelesaikan soal sebelumnya. Berapa jumlah collection yang kamu miliki? *
-17 
+tidak ada dong jika sudah di drop pada langkah 14 :D
